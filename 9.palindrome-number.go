@@ -54,7 +54,7 @@ func isPalindrome(x int) bool {
 	// When x is less than reversed
 	// it means we've reached the middle of the number
 	for x > reversed {
-		reversed = (reversed * 10) + (x % 10)
+		reversed = reversed*10 + x%10
 		// Remove the last digit from x
 		x /= 10
 	}
