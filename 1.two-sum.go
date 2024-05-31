@@ -49,6 +49,7 @@ package main
 // **Follow-up:** Can you come up with an algorithm that is less than
 // `O(n2)`time complexity?
 
+// twoSum returns the indices of the two numbers such that they add up to target.
 func twoSum(nums []int, target int) []int {
 	/*
 		Create a map to store the index of the number in the array.
@@ -67,7 +68,7 @@ func twoSum(nums []int, target int) []int {
 		// Calculate the difference between the target and the number by subtracting the number from the target
 		// For example if the target is 9 and the number is 2, the difference will be 7
 		diff := target - num
-		// Check if the difference is in the map
+		// Check if the difference is in the map 
 		if j, ok := index[diff]; ok {
 			// If the difference is in the map, return the index of the difference and the index of the number
 			return []int{j, i}
