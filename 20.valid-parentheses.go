@@ -43,6 +43,7 @@ package main
 //
 // - `1 <= s.length <= 104`
 // - `s` consists of parentheses only `'()[]{}'`.
+
 func isValid(s string) bool {
 	stack := []rune{} // Initialize an empty stack of runes
 	pairs := map[rune]rune{
