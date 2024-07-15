@@ -54,4 +54,5 @@ package main
 select distinct email
 from person
 group by email
+// include group with more than one row
 having count(*) > 1
