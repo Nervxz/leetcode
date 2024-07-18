@@ -55,7 +55,17 @@ package main
 //
 // ```
 
+// SELECT w1.id
 SELECT y.id
 FROM Weather x
 LEFT JOIN Weather y ON x.Id +1 = y.Id
 WHERE x.Temperature < y.Temperature
+
+// Select the id from the Weather table
+SELECT w1.id
+// Join the Weather table with itself
+FROM Weather w1
+// The join condition ensures we are comparing each date with the previous day
+JOIN Weather w2 ON w1.recordDate = w2.recordDate + INTERVAL '1 day' 
+// Filter the results to include only those where the temperature of the current day is higher than the previous day
+WHERE w1.temperature > w2.temperature;
