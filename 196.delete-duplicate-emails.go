@@ -60,18 +60,20 @@ package main
 //
 // ```
 
-// DELETE FROM Person WHERE id NOT IN (SELECT min(id) FROM Person GROUP BY email)
-DELETE
-FROM
-person
+// delete FROM Person 
+DELETE FROM person
+
 WHERE Id NOT IN
 (
+// select  min(id) as minid
 SELECT minid
 FROM
+// select  email, min(id) as minid
     (
     SELECT email, min(id) as minid
     FROM Person
     GROUP BY email 
     )
+// group BY email
 test
 )
